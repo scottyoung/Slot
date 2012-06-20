@@ -1,0 +1,76 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+#base {
+	background-color: blue;
+	float: left;
+	padding: 30px;
+	border-radius: 9px;
+}
+
+#print {
+	font-size: 300%;
+	margin-left: 10px;
+	padding-top: 1px;
+}
+
+#slot {
+	float: right;
+	margin: 20px 400px 0 0;
+	background-image: url(../img/slot-handle.png);
+	width: 122px;
+	height: 378px;
+}
+
+#slot:hover {
+	background-image: url(../img/slot-handle-hover.png);
+}
+
+.wheel {
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 300px;
+	float: left;
+	margin: 10px 0;
+	border: red solid 10px;
+	border-radius: 9px;
+}
+
+.slotA_1 {
+background-image: url(../img/coffee_machine.jpg);
+}
+
+.slotA_2{
+background-image: url(../img/tea_cup.jpg);
+}
+
+.slotA_3{
+background-image: url(../img/espresso_machine.jpg); 
+}
+
+.slotB_1 {
+background-image: url(../img/coffee-filters.jpg);
+}
+
+.slotB_2{
+background-image: url(../img/tea-ball.jpg);
+}
+
+.slotB_3{
+background-image: url(../img/tamper.jpg); 
+}
+
+.slotC_1 {
+background-image: url(../img/coffee_beans.jpg);
+}
+
+.slotC_2{
+background-image: url(../img/loose-tea.jpg);
+}
+
+.slotC_3{
+background-image: url(../img/espresso-beans.jpg); 
+}

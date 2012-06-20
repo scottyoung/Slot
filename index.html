@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Slot Machine</title>
+<link rel='stylesheet' href='css/style.css'>
+</head>
+<script src="js/jquery-1.6.1-min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#slot").click(function() {
+			var spin = spinWheel("#print");
+			 $("#print").html("<p>" + spin + "</p>").css("opacity", "0").delay(1000).animate({"opacity":"100"},100);
+			 });
+			
+		});
+	
+function spinWheel(elem)
+{
+	var wheel = Math.floor(Math.random() * 3) + 1;
+	var wheel_2 = Math.floor(Math.random() * 3) + 1;
+	var wheel_3 = Math.floor(Math.random() * 3) + 1;
+	showWheel(10, wheel, $('#wheel'), "A" );
+	showWheel(10, wheel_2, $('#wheel2'), "B" );
+	showWheel(10, wheel_3, $('#wheel3'), "C" )
+	var result = "Try Again!"
+	if (wheel == wheel_2 && wheel_2 == wheel_3) {
+		if (wheel == "1")
+			result = "You win a cup of Coffee!";
+		else if (wheel_2 == "2")
+			result = "You win a spot of Tea!"
+		else
+			result = "You win a shot of Espresso!"	
+	}
+	return result;
+}
+
+function showWheel(times, final, element, slot)
+{
+	element.removeClass();
+	if (times > 1)
+	{
+		element.addClass('wheel slot' + slot + '_' + (times%3+1));
+		setTimeout(function(){ showWheel(times-1,final,element,slot);},100);
+	}
+	else
+		element.addClass('wheel slot' + slot + '_' + final);
+}	
+</script>
+
+<div id="slot"></div>
+<div id="base">
+	<div id="wheel" class="wheel slotA_1"></div>
+	<div id="wheel2" class="wheel slotB_1"></div>
+	<div id="wheel3" class="wheel slotC_1"></div>
+</div>
+	<div id="print" style="clear:both"></div>
+</html>
